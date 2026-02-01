@@ -35,7 +35,7 @@ async function fetchRepoStructure(owner, repo) {
     try {
         const headers = { 'User-Agent': 'node.js' };
         if (process.env.GITHUB_TOKEN) {
-            headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+            headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
         }
 
         const response = await axios.get(apiUrl, { headers });
