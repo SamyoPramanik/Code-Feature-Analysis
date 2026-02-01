@@ -46,7 +46,7 @@ async function fetchRepoStructure(owner, repo) {
             const masterUrl = `https://api.github.com/repos/${owner}/${repo}/git/trees/master?recursive=1`;
             const headers = { 'User-Agent': 'node.js' };
             if (process.env.GITHUB_TOKEN) {
-                headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
+                headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
             }
 
             const response = await axios.get(masterUrl, { headers });
@@ -62,14 +62,19 @@ async function fetchRepoStructure(owner, repo) {
 // C. Fetch Raw File Content
 async function fetchFileContent(owner, repo, path) {
     const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/${path}`;
+    const headers = {};
+    if (process.env.GITHUB_TOKEN) {
+        headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
+    }
+
     try {
-        const response = await axios.get(rawUrl);
+        const response = await axios.get(rawUrl, { headers });
         return response.data;
     } catch (e) {
         // Fallback to master
         try {
             const rawUrlMaster = `https://raw.githubusercontent.com/${owner}/${repo}/master/${path}`;
-            const response = await axios.get(rawUrlMaster);
+            const response = await axios.get(rawUrlMaster, { headers });
             return response.data;
         } catch (error) {
             return `// Error fetching ${path}: ${error.message}`;
