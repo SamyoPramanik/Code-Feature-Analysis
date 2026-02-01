@@ -62,7 +62,7 @@ async function fetchRepoStructure(owner, repo) {
 // C. Fetch Raw File Content
 async function fetchFileContent(owner, repo, path) {
     const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/main/${path}`;
-    const headers = {};
+    const headers = { 'User-Agent': 'node.js' };
     if (process.env.GITHUB_TOKEN) {
         headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`;
     }
