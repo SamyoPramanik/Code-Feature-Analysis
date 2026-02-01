@@ -1,0 +1,62 @@
+POST http://localhost:3000/api/audit-features
+Content-Type: application/json
+
+{
+    "github_url": "https://github.com/SamyoPramanik/Poll-Portal-Local",
+    "tasks": [
+        {
+            "task_id": "1",
+            "task": "User Authentication",
+            "status": "implemented",
+            "description": "Implement JWT-based authentication with Email OTP and Institutional Email Validation (BUET)."
+        },
+        {
+            "task_id": "2",
+            "task": "Role-Based Access Control",
+            "status": "implemented",
+            "description": "Implement RBAC for Creator, Moderator, and Voter roles with secure permissions."
+        },
+        {
+            "task_id": "3",
+            "task": "Poll Management System",
+            "status": "implemented",
+            "description": "Enable poll creation with customizable settings: time windows, visibility, and weighted voting."
+        },
+        {
+            "task_id": "4",
+            "task": "Advanced Voting Logic",
+            "status": "implemented",
+            "description": "Implement student group targeting, multi-select options, and one-time voting enforcement."
+        },
+        {
+            "task_id": "5",
+            "task": "Real-time Analytics",
+            "status": "implemented",
+            "description": "Aggregated real-time vote results with conditional visibility and result availability checks."
+        },
+        {
+            "task_id": "6",
+            "task": "Database Infrastructure",
+            "status": "implemented",
+            "description": "PostgreSQL setup with connection pooling, automated schema initialization, and volume persistence."
+        },
+        {
+            "task_id": "7",
+            "task": "Observability Suite",
+            "status": "implemented",
+            "description": "Integration of Prometheus metrics, custom business counters, and Grafana dashboard provisioning."
+        },
+        {
+            "task_id": "8",
+            "task": "Security Hardening",
+            "status": "implemented",
+            "description": "Implement API Rate Limiting, Input Sanitization, and Secure Cookie-based sessions."
+        },
+        {
+            "task_id": "9",
+            "task": "System Reliability",
+            "status": "implemented",
+            "description": "Setup health check endpoints, service auto-restart policies, and load testing infrastructure."
+        }
+    ]
+}

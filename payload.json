@@ -1,0 +1,17 @@
+{
+    "github_url": "https://github.com/SamyoPramanik/Poll-Portal-Local",
+    "tasks": [
+        {
+            "task_id": "1",
+            "task": "User Authentication",
+            "status": "implemented",
+            "description": "Implement JWT-based authentication with Email OTP and Institutional Email Validation (BUET)."
+        },
+        {
+            "task_id": "2",
+            "task": "Role-Based Access Control",
+            "status": "implemented",
+            "description": "Implement RBAC for Creator, Moderator, and Voter roles with secure permissions."
+        }
+    ]
+}
